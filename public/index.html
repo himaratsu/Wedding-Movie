@@ -3,22 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Hello World</title>
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<h1>Hello!</h1>
-	<div id="container"></div>
+	<div id="wrapper">
+		<h1>結婚式の余興.jp</h1>
+		<h2>結婚式の余興を考えるときに参考になる動画を集めました</h2>
+		<div id="container"></div>
 
-	<div>
-		<input type="text" name="title" value="a"/>
-		<input type="text" name="url" value="b"/>
-		<button id="post_movie">登録</button>
+		<div id="addMovie">
+			<input type="text" name="url" class="youtubeUrlField" placeholder="Youtubeの動画URL"/>
+			<button id="post_movie">登録する</button>
+		</div>
 	</div>
 
+	<!-- content is fin -->
+
 	<script id="movieTemplate" type="text/x-jsrender">
-    	<div>
+    	<div class="movieContent">
+    		<p class="embed-player">
+    			<iframe width="500" height="305"
+    		 	src="//www.youtube.com/embed/{{:youtubeId}}" 
+    		 	frameborder="0" allowfullscreen>
+    		 	</iframe>
+    		</p>
     		<p class="title">{{:title}}</p>
-    		<p class="url">{{:url}}</p>
     	</div>
   	</script>
 

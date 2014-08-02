@@ -4,7 +4,8 @@ var Schema	 =  mongoose.Schema;
 
 var MovieSchema = new Schema({
 	title : {type:String, require:true},
-	url	  : {type:String, require:true}
+	url	  : {type:String, require:true},
+	youtubeId : {type:String, require:true}
 });
 mongoose.model('Movie', MovieSchema);
 
