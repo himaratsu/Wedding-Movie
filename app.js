@@ -28,7 +28,10 @@ if ('development' == app.get('env')) {
 }
 
 // db
-var mongoUri = "mongodb://localhost/youtube";
+// var mongoUri = "mongodb://localhost/youtube";
+var mongoUri = process.env.MONGOLAB_URI ||
+			   process.env.MONGOHQ_URL ||
+			   "mongodb://localhost/youtube";
 var mongoose = require('mongoose');
 mongoose.connect(mongoUri);
 
