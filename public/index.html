@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1>Hello!</h1>
+	<div id="container"></div>
+
+	<div>
+		<input type="text" name="title" value="a"/>
+		<input type="text" name="url" value="b"/>
+		<button id="post_movie">登録</button>
+	</div>
+
+	<script id="movieTemplate" type="text/x-jsrender">
+    	<div>
+    		<p class="title">{{:title}}</p>
+    		<p class="url">{{:url}}</p>
+    	</div>
+  	</script>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jsrender.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
