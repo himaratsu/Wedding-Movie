@@ -16,17 +16,24 @@ exports.get = function(req, res) {
 exports.post = function(req, res) {
   var movie = new Movie(req.body);
 
-  console.log(movie);
-
-  var youtubeId = movie.url.replace("https://www.youtube.com/watch?v=", "");
+  var youtubeId = getQuerystring(movie.url, "v");
   movie.youtubeId = youtubeId;
 
   getYoutubeTitle(req, res, movie);
 };
 
+function getQuerystring(url, key, default_) {
+	if (default_ == null) default_="";
+	key = key.replacekey = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
+   	var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");  
+   	var qs = regex.exec(url);  
+  	if(qs == null)  
+    	return default_;  
+   	else  
+    	return qs[1]; 
+}
 
 function getYoutubeTitle(req, res, movie) {
-	console.log("get title!");
 	request(
 	{
 		uri:movie.url
@@ -40,7 +47,6 @@ function getYoutubeTitle(req, res, movie) {
 		var $ = cheerio.load(body);
 		var title = $("#eow-title");
 
-		console.log("title: " + title.text().trim());
 		movie.title = title.text().trim();
 
 		movie.save(function(err) {

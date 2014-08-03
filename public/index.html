@@ -9,13 +9,37 @@
 <body>
 	<div id="wrapper">
 		<h1>結婚式の余興.jp</h1>
-		<h2>結婚式の余興を考えるときに参考になる動画を集めました</h2>
-		<div id="container"></div>
+		<h3>結婚式の余興を考えるときに参考になる動画を集めました</h3>
+
+		<div id ="main-contents">
+			<div id="movie-wedding">
+				<div id="container"></div>
+			</div>
+
+			<div id="twitter-wedding">
+				<!-- ad -->
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- wedding-right-top -->
+				<ins class="adsbygoogle"
+				     style="display:inline-block;width:336px;height:280px"
+				     data-ad-client="ca-pub-5042077439159662"
+				     data-ad-slot="5352313353"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+
+				<!-- twitter card-->
+				<h2>みんなの余興</h2>
+				<a class="twitter-timeline" width="350" href="https://twitter.com/search?q=%E7%B5%90%E5%A9%9A%E5%BC%8F%E3%81%AE%E4%BD%99%E8%88%88" data-widget-id="495781634184998912">結婚式の余興 に関するツイート</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+		</div>
 
 		<div id="addMovie">
 			<input type="text" name="url" class="youtubeUrlField" placeholder="Youtubeの動画URL"/>
 			<button id="post_movie">登録する</button>
 		</div>
+
 	</div>
 
 	<!-- content is fin -->
@@ -28,7 +52,7 @@
     		 	frameborder="0" allowfullscreen>
     		 	</iframe>
     		</p>
-    		<p class="title">{{:title}}</p>
+    		<p class="title"><a href="{{:url}}" target="_blank">{{:title}}</a></p>
     	</div>
   	</script>
 

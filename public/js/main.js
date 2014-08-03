@@ -35,7 +35,6 @@ function reloadMovie() {
 
 function postMovie() {
 	var url = $('input[name="url"]').val();
-	console.log("url: "+url);
 
 	$.ajax({
 	type: "POST",
@@ -46,7 +45,9 @@ function postMovie() {
 		reloadMovie();
 	},
 	error: function(err) {
-		console.log("error: "+err);
+		console.log("err[0]:" + err.message);
+		console.log("error: "+err.message);
+		
 	}
 });
 }
