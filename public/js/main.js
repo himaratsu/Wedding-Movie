@@ -109,6 +109,15 @@ function renderMovies() {
 function postMovie() {
 	var url = $('input[name="url"]').val();
 
+	for(var i = 0; i < movies.length; i++){
+		var movie = movies[i];
+		if (movie.url == url) {
+			alert('この動画は既に登録されています');
+			console.log("movie already exist!");
+			return;
+		}
+	};
+
 	$.ajax({
 	type: "POST",
 	data: {url:url},
@@ -121,9 +130,8 @@ function postMovie() {
 		$('input[name="url"]').val("");
 	},
 	error: function(err) {
-		console.log("err[0]:" + err.message);
-		console.log("error: "+err.message);
-		
+		console.log(err);
+		alert('URLが不正です\nyoutubeのurl以外は登録できません');
 	}
 });
 }

@@ -45,8 +45,13 @@ function getYoutubeTitle(req, res, movie) {
 	    	return;
 		}
 		var $ = cheerio.load(body);
-		var title = $("#eow-title");
 
+		if ($('title').text() == 'YouTube') {
+			res.send(400, err);
+			return;
+		}
+
+		var title = $("#eow-title");
 		movie.title = title.text().trim();
 
 		movie.save(function(err) {
