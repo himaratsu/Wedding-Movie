@@ -7,6 +7,13 @@ $('#post_movie').click(function (){
 	postMovie();
 });
 
+$('.movieContent').hover(function() {
+	$(this).addClass("hover");
+}, function() {
+	if ($(this).hasClass("hover")) {
+		$(this).removeClass("hover")
+	}
+});
 
 function reloadMovie() {
 		$.ajax({
