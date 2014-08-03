@@ -118,7 +118,7 @@ function postMovie() {
 		reloadMovie();
 
 		// clear text
-		$('input[name="url"]').text();
+		$('input[name="url"]').val("");
 	},
 	error: function(err) {
 		console.log("err[0]:" + err.message);
