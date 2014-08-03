@@ -3,7 +3,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 
 exports.get = function(req, res) {
-  Movie.find({}, {}, {limit:4}, function(err, movies) {
+  Movie.find({}, function(err, movies) {
     if (err) {
       console.log(err);
       res.send(400, err);

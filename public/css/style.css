@@ -15,7 +15,7 @@ a {
 
 #wrapper {
 	width: 1000px;
-	padding: 10px 0 50px;
+	padding: 10px 0 0;
 	margin: 0 auto;
 	background-color: #fff;
 }
@@ -43,8 +43,21 @@ h2 {
 h3 {
 	text-align: center;
 	font-size: 15px;
-	margin-bottom: 40px;
+	margin-bottom: 30px;
 	color: #444;
+}
+
+#social-badge {
+	width: 350px;
+	text-align: center;
+	margin:0 auto 40px;
+	display: -webkit-box;
+	display: -moz-box;
+}
+
+.tw-share {
+	margin: 0 10px;
+	width: 100px;
 }
 
 #main-contents {
@@ -119,6 +132,7 @@ h3 {
 	border: 1px solid #ddd;
 	color: #111;
 	width: 100px;
+	cursor: pointer;
 }
 
 #post_movie:hover {
@@ -129,11 +143,60 @@ h3 {
 
 #footerAd {
 	width: 728px;
-	margin: 0 auto;
+	margin: 0 auto 50px;
 }
 
-/** Amazon **/
 
+#footer {
+	background-color: #eee;
+	text-align: center;
+	padding: 20px 0 50px;
+}
+
+#copyright {
+	font-family: "Helvetica";
+}
+
+/** Paging **/
+.paging-btn {
+	padding: 8px 30px;
+	border: 1px solid #eee;
+	background-color: #ddd;
+	color: #666;
+	width: 50px;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.paging-btn:hover {
+	color: #00B7FF;
+	background-color: #eee;
+}
+
+.disable {
+	background-color: #fff;
+	color: #ccc;
+	cursor: default;
+}
+
+.disable:hover {
+	background-color: #fff;
+	color: #ccc;
+	cursor: default;
+}
+
+#paging {
+	width: 244px;
+	text-align: center;
+	margin: 0 auto 20px;
+
+	display: -webkit-box;
+	display: -moz-box;
+}
+
+
+
+/** Amazon **/
 #amazon-title {
 	margin-top: 50px;
 }
@@ -149,5 +212,5 @@ h3 {
 #twitter-wedding {
 	font-size: 14px;
 	width: 336px;
-
+	margin-bottom:20px;
 }
