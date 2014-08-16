@@ -1,0 +1,47 @@
+#!/usr/bin/env node
+
+var http = require('http');
+
+var options = {
+  hostname: 'gdata.youtube.com',
+  port: '80',
+  path: '/feeds/api/videos?vq=結婚式の余興&max-results=20&orderby=viewCount&alt=json',
+  method: 'GET'
+};
+
+var data = null;
+
+var req = http.request(options, function(res){
+
+  data = null;
+
+  res.on('data', function(chunk){
+    data += chunk;
+  });
+
+  res.on('end', function(){
+    console.log('-- get response --');
+
+    var result = data.replace("null", "");
+    var json = JSON.parse(result);
+
+    // console.log(json.feed.entry);
+    var array = json.feed.entry;
+
+    for (var i=0; i<array.length; i++) {
+      console.log(array[i].title.$t);
+    }
+
+  });
+});
+
+req.on('error', function(e){
+  console.log('problem with request' + e.message);
+});
+
+req.write('data\n');
+req.end();
+
+
+
+

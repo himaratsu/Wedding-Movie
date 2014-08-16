@@ -60,7 +60,21 @@ function searchMovie() {
 }
 
 $('#post_movie').click(function (){
-	postMovie();
+	// postMovie();
+	
+	$.ajax({
+		type: "POST",
+		data: {url:"https://www.youtube.com/watch?v=Z4Jn2XjYRhU"},
+		url: "/v1/movies/random",
+		success: function(data) {
+			console.log(data);
+		},
+		error: function(err) {
+			console.log(err);
+			console.log("----- error");
+			alert('URLが不正です\nyoutubeのurl以外は登録できません');
+		}
+	});
 });
 
 $('.movieContent').hover(function() {
@@ -113,18 +127,6 @@ function setPagingEnable() {
 	}
 }
 
-function getUrlVars() 
-{ 
-    var vars = [], hash; 
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&'); 
-    for(var i = 0; i < hashes.length; i++) { 
-        hash = hashes[i].split('='); 
-        vars.push(hash[0]); 
-        vars[hash[0]] = hash[1]; 
-    } 
-    return vars; 
-}
-
 function reloadMovie() {
 	nowPage = 0;
 
@@ -167,7 +169,6 @@ function postMovie() {
 		var movie = movies[i];
 		if (movie.url == url) {
 			alert('この動画は既に登録されています');
-			console.log("movie already exist!");
 			return;
 		}
 	};
@@ -176,7 +177,7 @@ function postMovie() {
 }
 
 function sendNewMovie(url) {
-		$.ajax({
+	$.ajax({
 		type: "POST",
 		data: {url:url},
 		url: "/v1/movies",

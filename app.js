@@ -43,8 +43,8 @@ var routes = {
 };
 
 app.get('/v1/movies', routes.v1.movies.get);
+app.post('/v1/movies/random', routes.v1.movies.postRandom);
 app.post('/v1/movies', routes.v1.movies.post);
-// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
