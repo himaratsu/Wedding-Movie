@@ -3,11 +3,18 @@
 var http = require('http');
 
 var options = {
-  hostname: 'gdata.youtube.com',
+  hostname: 'wedding-movie.herokuapp.com',
   port: '80',
-  path: '/feeds/api/videos?vq=結婚式の余興&max-results=20&orderby=viewCount&alt=json',
-  method: 'GET'
+  path: '/v1/movies/random',
+  method: 'POST'
 };
+
+// var options = {
+//   hostname: 'localhost',
+//   port: '3000',
+//   path: '/v1/movies/random',
+//   method: 'POST'
+// };
 
 var data = null;
 
@@ -21,17 +28,7 @@ var req = http.request(options, function(res){
 
   res.on('end', function(){
     console.log('-- get response --');
-
-    var result = data.replace("null", "");
-    var json = JSON.parse(result);
-
-    // console.log(json.feed.entry);
-    var array = json.feed.entry;
-
-    for (var i=0; i<array.length; i++) {
-      console.log(array[i].title.$t);
-    }
-
+    console.log(data)
   });
 });
 
