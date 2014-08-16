@@ -71,6 +71,7 @@ function getYoutubeMovie(req, res, movies) {
 		  }
 		}
 
+		existStatus = 1;
 		if (existStatus == 0) {
 			// 新しい動画だ！
 		  	var newMovie = new Movie();
