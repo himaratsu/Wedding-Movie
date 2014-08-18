@@ -48,7 +48,6 @@ function setPagingEnable() {
 	}
 
 	var nextBtn = $('#go-next');
-	console.log("total: ", total);
 	if ((nowPage+1)*4 >= total) {
 		nextBtn.addClass('disable');
 	}
@@ -66,7 +65,6 @@ function reloadMovie() {
 		type: "GET",
 		url: "/v1/movies",
 		success: function(data) {
-			console.log(data);
 			movies = data;
 			renderMovies();
 		},
@@ -114,7 +112,6 @@ function sendNewMovie(url) {
 		data: {url:url},
 		url: "/v1/movies",
 		success: function(data) {
-			console.log(data);
 			reloadMovie();
 
 			// clear text
