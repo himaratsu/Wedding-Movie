@@ -2,19 +2,19 @@
 
 var http = require('http');
 
-var options = {
-  hostname: 'wedding-movie.herokuapp.com',
-  port: '80',
-  path: '/v1/movies/random',
-  method: 'POST'
-};
-
 // var options = {
-//   hostname: 'localhost',
-//   port: '3000',
+//   hostname: 'wedding-movie.herokuapp.com',
+//   port: '80',
 //   path: '/v1/movies/random',
 //   method: 'POST'
 // };
+
+var options = {
+  hostname: 'localhost',
+  port: '3000',
+  path: '/v1/movies/random',
+  method: 'POST'
+};
 
 var data = null;
 
