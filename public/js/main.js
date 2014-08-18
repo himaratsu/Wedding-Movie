@@ -5,76 +5,8 @@ $(function() {
 	reloadMovie();
 });
 
-
-function onJSClientLoad() {
-    gapi.client.load('youtube', 'v3', function(){
-    	var SERVER_KEY = 'AIzaSyDAw4FMFn0xxuNrx_BTC4rBvFc9sElRhds';
-    	gapi.client.setApiKey(SERVER_KEY);
-    	console.log("set api key");
-
-        searchMovie();
-    });
-}
-
-// Search for a specified string.
-function searchMovie() {
-  var q = "結婚式の余興";
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet',
-    order: 'rating',
-    maxResults: '50'
-  });
-
-  request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-
-    var videos = response.result.items;
-    var isExistMovie = 0;
-
-    for (i=0; i<videos.length; i++) {
-    	var video = videos[i];
-    	isExistMovie = 0;
-
-    	for (j=0; j<movies.length; j++) {
-    		if (video.id.videoId == movies[j].youtubeId) {
-    			isExistMovie = 1;
-    			break;
-    		}
-	   	}
-	   	console.log(video.id.videoId + " / " + video.snippet.title);
- 
- 		if (isExistMovie == 1) {
- 			console.log("すでに登録済の動画");
- 		}
- 		else {
- 			console.log("新しく登録しました");
- 			console.log(video.id.videoId + " / " + video.snippet.title);
-
- 			var videoUrl = "https://www.youtube.com/watch?v=" + video.id.videoId;
- 			sendNewMovie(videoUrl);
- 			break;
- 		}
-	}
-  });
-}
-
 $('#post_movie').click(function (){
-	// postMovie();
-	
-	$.ajax({
-		type: "POST",
-		data: {url:"https://www.youtube.com/watch?v=Z4Jn2XjYRhU"},
-		url: "/v1/movies/random",
-		success: function(data) {
-			console.log(data);
-		},
-		error: function(err) {
-			console.log(err);
-			console.log("----- error");
-			alert('URLが不正です\nyoutubeのurl以外は登録できません');
-		}
-	});
+	postMovie();
 });
 
 $('.movieContent').hover(function() {
