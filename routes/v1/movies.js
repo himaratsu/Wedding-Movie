@@ -32,12 +32,16 @@ function getAllMovie(req, res) {
 
 // use youtube api
 function getYoutubeMovie(req, res, movies) {
-	var url = "http://gdata.youtube.com/feeds/api/videos?vq=結婚式の余興&max-results=100&orderby=viewCount&alt=json";
+	var url = "http://gdata.youtube.com/feeds/api/videos?vq=結婚式の余興&max-results=50&orderby=viewCount&alt=json";
 	request(url, function (error, response, body) {
 		if (error) {
 			console.log('error: ' + response.statusCode);
 			return;
 		}
+
+		console.log("------------")
+		console.log(response.body);
+		console.log("------------")
 
 		var json = JSON.parse(response.body);
 		var array = json.feed.entry;
