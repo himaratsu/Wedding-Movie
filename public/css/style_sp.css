@@ -1,0 +1,131 @@
+@font-face {
+	font-family:'kiloji';
+	src: url('./kiloji.ttf');
+}
+
+body {
+	font: 14px "kiloji", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+
+#wrapper {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+#main-contents {
+	margin: 0 auto 40px;
+}
+
+#social-badge {
+	width: 85%;
+	text-align: center;
+	margin:0 auto 10px;
+	display: -webkit-box;
+	display: -moz-box;
+}
+
+.tw-share {
+	margin-left: 10px;
+	width: 100px;
+}
+
+.fb_iframe_widget {
+  width: auto !important;
+  height: 20px !important;
+  display: inline-block !important;
+}
+
+
+h1 {
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
+h3 {
+	text-align: center;
+	font-size: 12px;
+	margin-bottom: 20px;
+	color: #444;
+}
+
+.movieContent {
+	width: 320px;
+	margin: 0 auto 15px;
+}
+
+.movieContent a {
+	color: #333;
+}
+
+.movieContent:hover a{
+	color: #00B7FF;
+}
+
+.embed-player {
+	text-align: center;
+}
+
+.title {
+	font-size: 13px;
+	text-align: center;
+	margin-top: 1px;
+	margin-bottom: 7px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+
+/** Paging **/
+.paging-btn {
+	padding: 8px 30px;
+	border: 1px solid #eee;
+	background-color: #ddd;
+	color: #666;
+	width: 50px;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.paging-btn:hover {
+	color: #00B7FF;
+	background-color: #eee;
+}
+
+.disable {
+	background-color: #fff;
+	color: #ccc;
+	cursor: default;
+}
+
+.disable:hover {
+	background-color: #fff;
+	color: #ccc;
+	cursor: default;
+}
+
+#paging {
+	width: 244px;
+	text-align: center;
+	margin: 0 auto 20px;
+
+	display: -webkit-box;
+	display: -moz-box;
+}
+
+#footer {
+	background-color: #eee;
+	text-align: center;
+	padding: 2px 0 20px;
+}
+
+#copyright {
+	font-family: "Helvetica";
+	font-size: 10px;
+}
